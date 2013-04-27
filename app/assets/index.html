@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="stylesheets/app.css">
         <style>
             body {
-                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+                padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
             }
         </style>
 
@@ -38,7 +38,7 @@
 
     <body>
       <a href="https://github.com/sandy98/brunch-with-wisp"><img src="img/forkme_right_red_aa0000.png" style="z-index: 3; position: absolute; top: 0px; right: 0px; border: 0px none;"/></a>
-      <div id="main">
+      <div id="main" class="container">
         <h2>Brunch with nothing but jQuery and a touch of Wisp</h2>
         <hr/>
         <p>
@@ -63,6 +63,45 @@
            </form>
         </div>
         <hr/>
+      <div class="row" style="padding: 2em;">
+        <div class="span5">
+          In case you're curious about what the initialize jQuery function looks like in Clojure-Wisp, here it is:
+          <pre>
+            <code>
+(def utils (require "lib/utils"))
+
+($
+  (fn []
+    (do
+      ;(alert (str "Barebones Brunch with a touch of Wisp utils.\nUtils version" utils.version))
+      (.on ($ "form") "submit" (fn [ev]
+        (do
+         (if ev.preventDefault (ev.preventDefault))
+         (.text ($ "#result") (utils.factorial (parseInt (.val ($ "#txt-n")))))
+         false))))))
+            </code>
+          </pre>
+        </div>
+        <div class="span5">
+          And this is what Wisp transpiler makes of it. It's very human readable Javascript code, as can be seen:
+          <pre>
+            <code>
+var utils = require("lib/utils");
+module.exports.utils = utils;
+
+$(function() {
+    return $("form").on("submit", function(ev) {
+    ev.preventDefault ?
+    ev.preventDefault() :
+    void(0);
+    $("#result").text(utils.factorial(parseInt($("#txt-n").val())));
+    return false;
+    });
+  })
+            </code>
+          </pre>
+        </div>
+      </div>
       </div>
     </body>
 </html>

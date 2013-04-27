@@ -80,23 +80,22 @@
 })();
 
 window.require.register("initialize", function(exports, require, module) {
-  var utils = require('lib/utils');
+  var utils = require("lib/utils");
+  module.exports.utils = utils;
 
-  ;$(function () { 
-    // alert("Barebones Brunch with a touch of Wisp utils.\nUtils version " + utils.version);
-    $('form').on('submit', function(ev) {
-      if (ev && ev.preventDefault) {ev.preventDefault();}
-      $('#result').text(utils.factorial(parseInt($('#txt-n').val())));
+  $(function() {
+    return $("form").on("submit", function(ev) {
+      ev.preventDefault ?
+        ev.preventDefault() :
+        void(0);
+      $("#result").text(utils.factorial(parseInt($("#txt-n").val())));
       return false;
     });
-  });
-    
-    
-    
-    
+  })
+  
 });
 window.require.register("lib/utils", function(exports, require, module) {
-  var version = "0.0.1";
+  var version = "0.0.3";
   module.exports.version = version;
 
   var factorial = function(n) {
