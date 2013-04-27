@@ -37,31 +37,31 @@
     </head>
 
     <body>
+      <a href="https://github.com/sandy98/brunch-with-wisp"><img src="img/forkme_right_red_aa0000.png" style="z-index: 3; position: absolute; top: 0px; right: 0px; border: 0px none;"/></a>
       <div id="main">
         <h2>Brunch with nothing but jQuery and a touch of Wisp</h2>
         <hr/>
         <p>
-          As you probably know, Wisp is a cute Clojure-like dialect of Lisp that compiles to Javascript
+          As you probably know, <a href="https://github.com/Gozala/wisp">Wisp</a> is a cute <strong>Clojure-like dialect of Lisp</strong> that compiles to Javascript
           and as such, has made it's way into the web via Brunch<br/>
-          Will use function factorial, defined in lib/utils.wisp like so:<br/>
-          <pre>
+          Current example will use function factorial, defined in lib/utils.wisp like so:
+          <!--<pre>-->
             <code>
               (def factorial (fn [n] (if (< n 2) n (* n (factorial (- n 1))))))
             </code>
-          </pre>
+          <!--</pre>-->
         </p>
         <hr/>
-        <span style="margin-bottom: 0.5em;">
-          <form>
+        <div class="row" style="padding: 2em;">
+            <form class="form-inline">
     	      <label for="txt-n">Number:</label>
-    	      <input type="number" id="txt-n" size="2" style="text-align: right;" />
-          </form>
-        </span>
-        <hr/>
-        <span style="margin-top: 0.5em;">
-          <label>Factorial:</label>
-          <span class="result" id="result" style="font-weight: bold; padding: 0.25em; min-width: 2em; margin-left: 1em; border: solid 1px; border-radius: 3px;"></span>
-        </span>
+    	      <input type="number" id="txt-n" size="3" style="text-align: right; width: 3em;" />
+    	      &nbsp;&nbsp;&nbsp;
+              <span>Factorial:</span>
+              &nbsp;
+              <span class="label label-info" id="result" style="font-size: 12pt; padding: 1em; font-weight: bold;">XXX</span>
+           </form>
+        </div>
         <hr/>
       </div>
     </body>
