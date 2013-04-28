@@ -88,21 +88,55 @@ window.require.register("initialize", function(exports, require, module) {
       ev.preventDefault ?
         ev.preventDefault() :
         void(0);
-      $("#result").text(utils.factorial(parseInt($("#txt-n").val())));
+      $("#factorial").text(utils.factorial(parseInt($("#txt-n").val())));
+      $("#sqrt").text(utils.sqrt(parseInt($("#txt-n").val())));
       return false;
     });
   })
   
 });
 window.require.register("lib/utils", function(exports, require, module) {
-  var version = "0.0.3";
+  var version = "0.0.5";
   module.exports.version = version;
 
   var factorial = function(n) {
     return n < 2 ?
-      n :
+      1 :
       n * (factorial(n - 1));
   };
-  module.exports.factorial = factorial
+  module.exports.factorial = factorial;
+
+  var average = function(v1, v2) {
+    return (v1 + v2) / 2;
+  };
+  module.exports.average = average;
+
+  var square = function(n) {
+    return n * n;
+  };
+  module.exports.square = square;
+
+  var abs = function(n) {
+    return n < 0 ?
+      -1 * n :
+      n;
+  };
+  module.exports.abs = abs;
+
+  var sqrt = function(n) {
+    var improve = function(guess) {
+      return average(guess, n / guess);
+    };
+    var isGoodEnough = function(guess) {
+      return abs((square(guess)) - n) < 1e-10;
+    };
+    var tryit = function(guess) {
+      return isGoodEnough(guess) ?
+        guess :
+        tryit(improve(guess));
+    };
+    return tryit(1);
+  };
+  module.exports.sqrt = sqrt
   
 });
