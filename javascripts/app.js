@@ -81,7 +81,7 @@
 
 window.require.register("initialize", function(exports, require, module) {
   var utils = require("lib/utils");
-  module.exports.utils = utils;
+  exports.utils = utils;
 
   $(function() {
     return $("form").on("submit", function(ev) {
@@ -97,31 +97,31 @@ window.require.register("initialize", function(exports, require, module) {
 });
 window.require.register("lib/utils", function(exports, require, module) {
   var version = "0.0.5";
-  module.exports.version = version;
+  exports.version = version;
 
   var factorial = function(n) {
     return n < 2 ?
       1 :
       n * (factorial(n - 1));
   };
-  module.exports.factorial = factorial;
+  exports.factorial = factorial;
 
   var average = function(v1, v2) {
     return (v1 + v2) / 2;
   };
-  module.exports.average = average;
+  exports.average = average;
 
   var square = function(n) {
     return n * n;
   };
-  module.exports.square = square;
+  exports.square = square;
 
   var abs = function(n) {
     return n < 0 ?
       -1 * n :
       n;
   };
-  module.exports.abs = abs;
+  exports.abs = abs;
 
   var sqrt = function(n) {
     var improve = function(guess) {
@@ -137,6 +137,6 @@ window.require.register("lib/utils", function(exports, require, module) {
     };
     return tryit(1);
   };
-  module.exports.sqrt = sqrt
+  exports.sqrt = sqrt
   
 });
