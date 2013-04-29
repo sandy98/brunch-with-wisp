@@ -19,7 +19,7 @@
     "css-brunch": ">= 1.0 < 1.6",
     "uglify-js-brunch": ">= 1.0 < 1.6",
     "clean-css-brunch": ">= 1.0 < 1.6",
-    "wisp-brunch": ">=0.0.4"
+    "wisp-brunch": ">=0.0.6"
   },
   "devDependencies": {}
 }
