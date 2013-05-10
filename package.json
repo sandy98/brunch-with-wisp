@@ -2,11 +2,11 @@
   "author": "Domingo E. Savoretti",
   "name": "brunch-with-wisp",
   "description": "Brunch skeleton which uses Wisp. Clojure Lisp to the Web!",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/sandy98/brunch-with-wisp",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/sandy98/brunch-with-wisp.git"
   },
   "engines": {
     "node": "~0.6.10 || 0.8 || 0.9"
