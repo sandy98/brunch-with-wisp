@@ -17,8 +17,8 @@
   "dependencies": {
     "javascript-brunch": ">= 1.0 < 1.6",
     "css-brunch": ">= 1.0 < 1.6",
-    "uglify-js-brunch": ">= 1.0 < 1.6",
-    "clean-css-brunch": ">= 1.0 < 1.6",
+    "uglify-js-brunch": ">=2.10.0",
+    "clean-css-brunch": ">=3.0.0",
     "wisp-brunch": ">=0.0.6"
   },
   "devDependencies": {}
